@@ -26,6 +26,10 @@ dbConnect(); // Connect to the database here
 
 require('./utils/cronJobs');
 
+app.get('/', (req, res) => {
+    return res.send('API is running....');
+});
+
 const PORT = process.env.PORT || 5000;``
 
 // Start the server
