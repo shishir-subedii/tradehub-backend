@@ -252,7 +252,8 @@ exports.searchProduct = async (req, res) => {
         $or: [
             { name: { $regex: searchKey, $options: 'i' } },
             { description: { $regex: searchKey, $options: 'i' } },
-            { tags: { $regex: searchKey, $options: 'i' } }
+            { tags: { $regex: searchKey, $options: 'i' } },
+            { category: { $regex: searchKey, $options: 'i' } },
         ]
     };
 
