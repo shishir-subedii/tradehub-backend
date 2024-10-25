@@ -136,7 +136,6 @@ exports.searchOrder = async (req, res) => {
         const orders = await Order.find({
             $or: [
                 { 'products.productName': { $regex: searchKey, $options: 'i' } },
-                { 'orderStatus': { $regex: searchKey, $options: 'i' } },
                 { _id: searchKey }
             ]
         }).exec();
