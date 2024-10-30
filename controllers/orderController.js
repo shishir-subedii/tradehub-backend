@@ -157,6 +157,7 @@ exports.getAllOrdersForSeller = async (req, res) => {
 
     try {
         const orders = await Order.find({ seller: sellerId })
+            .sort({ createdAt: -1 }) // Sort by date, newest first
             .skip((page - 1) * limit)
             .limit(parseInt(limit))
             .exec();
